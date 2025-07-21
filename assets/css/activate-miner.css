@@ -1,0 +1,42 @@
+/* ========================================= */
+/*  Activation Page Styles                   */
+/* ========================================= */
+
+.activation-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 60px 0;
+}
+
+.activation-card {
+    background-color: #1e293b;
+    padding: 40px;
+    border-radius: 20px;
+    max-width: 500px;
+    width: 100%;
+    border: 1px solid #334155;
+}
+
+.activation-icon {
+    font-size: 3.5rem;
+    color: #f59e0b;
+    margin-bottom: 20px;
+}
+
+.activation-card h3 {
+    font-weight: bold;
+    color: #fff;
+}
+
+.activation-card .form-control {
+    background-color: #334155;
+    border: 1px solid #475569;
+    color: #fff;
+    letter-spacing: 2px; /* To make key input look better */
+}
+
+.activation-card .form-control::placeholder {
+    color: #64748b;
+    letter-spacing: normal;
+}
