@@ -1,0 +1,60 @@
+/* ========================================= */
+/*  About Us Page Styles                     */
+/* ========================================= */
+
+/* Content sections on the about page */
+.about-content {
+    padding: 40px 0;
+}
+
+.about-content h2 {
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #f59e0b; /* Highlight color */
+}
+
+.about-content h3 {
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.about-content p {
+    color: #cbd5e1; /* Lighter text color for paragraphs */
+    line-height: 1.8;
+}
+
+/* "Why Choose Us" Section */
+.why-choose-us {
+    padding-top: 60px;
+    padding-bottom: 60px;
+}
+
+.feature-card {
+    background-color: #1e293b; /* Darker card background */
+    padding: 30px;
+    border-radius: 15px;
+    border: 1px solid #334155;
+    height: 100%;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.feature-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.feature-icon {
+    font-size: 3rem; /* 48px */
+    color: #f59e0b; /* Yellow icon color */
+    margin-bottom: 20px;
+}
+
+.feature-card h4 {
+    font-weight: bold;
+    color: #fff;
+    margin-bottom: 15px;
+}
+
+.feature-card p {
+    color: #94a3b8; /* Muted text color */
+}

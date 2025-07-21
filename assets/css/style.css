@@ -1,0 +1,264 @@
+/* General Body Styles */
+body {
+    background-color: #0f172a;
+    color: #e2e8f0;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Header and Navbar */
+.navbar-brand {
+    font-weight: bold;
+    font-size: 1.5rem;
+    color: #f59e0b !important;
+}
+.nav-link {
+    color: #cbd5e1 !important;
+    margin: 0 10px;
+}
+.nav-link:hover {
+    color: #f59e0b !important;
+}
+
+/* Buttons */
+.btn-warning {
+    background: linear-gradient(to right, #f59e0b, #fbbf24);
+    border: none;
+    color: #1e293b;
+    font-weight: 500;
+}
+.btn-outline-warning {
+    border-color: #f59e0b;
+    color: #f59e0b;
+}
+.btn-outline-warning:hover {
+    background-color: #f59e0b;
+    color: #1e293b;
+}
+
+/* Main Content Sections */
+main.container {
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
+section {
+    padding: 60px 0;
+}
+.section-title {
+    margin-bottom: 40px;
+    font-weight: bold;
+}
+
+/* Hero Section */
+.hero-section {
+    padding: 80px 0;
+}
+.hero-section h1 {
+    font-size: 3rem;
+    font-weight: bold;
+}
+
+/* Earn Calculator Section */
+.earn-section {
+    background-color: #1e293b;
+    border-radius: 15px;
+    padding: 40px;
+}
+.earn-calculator {
+    max-width: 500px;
+    margin: auto;
+    background-color: #334155;
+    padding: 30px;
+    border-radius: 10px;
+}
+.form-select {
+    background-color: #475569;
+    color: #fff;
+    border: 1px solid #64748b;
+}
+.earn-calculator .result {
+    background-color: #0f172a;
+    padding: 15px;
+    border-radius: 5px;
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+/* Plans Section */
+.plan-card {
+    background-color: #1e293b;
+    padding: 30px;
+    border-radius: 15px;
+    border: 1px solid #334155;
+    transition: transform 0.3s ease;
+}
+.plan-card:hover {
+    transform: translateY(-10px);
+    border-color: #f59e0b;
+}
+.plan-icon {
+    background-color: #34d399;
+    color: #1e293b;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px auto;
+    font-size: 2rem;
+    font-weight: bold;
+}
+.plan-price {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #f59e0b;
+    margin-bottom: 20px;
+}
+.plan-card ul {
+    margin-bottom: 20px;
+}
+.plan-card ul li {
+    padding: 8px 0;
+    border-bottom: 1px solid #334155;
+}
+.plan-card ul li:last-child {
+    border-bottom: none;
+}
+.total-return {
+    background-color: #334155;
+    padding: 10px;
+    border-radius: 5px;
+    font-weight: 500;
+    margin-bottom: 20px;
+}
+
+/* Testimonial Section */
+.testimonial-card {
+    max-width: 600px;
+    margin: auto;
+    background-color: #1e293b;
+    padding: 30px;
+    border-radius: 15px;
+    border-left: 5px solid #34d399;
+}
+.testimonial-card img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    margin-bottom: 15px;
+}
+
+/* Blog Section */
+.blog-card {
+    background-color: #1e293b;
+    border-radius: 15px;
+    overflow: hidden;
+    position: relative;
+}
+.blog-card img {
+    width: 100%;
+    height: auto;
+}
+.blog-date {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    background-color: #34d399;
+    color: #1e293b;
+    padding: 10px 15px;
+    border-radius: 10px;
+    font-weight: bold;
+}
+.blog-content {
+    padding: 20px;
+}
+
+/* Footer */
+.footer-section {
+    background-color: #1e293b;
+    padding: 50px 0 20px 0;
+}
+.footer-section h5 {
+    color: #fff;
+    margin-bottom: 20px;
+}
+.footer-section a {
+    color: #94a3b8;
+    text-decoration: none;
+}
+.footer-section a:hover {
+    color: #f59e0b;
+}
+.footer-section ul li {
+    margin-bottom: 10px;
+}
+.footer-section i {
+    margin-right: 10px;
+    color: #f59e0b;
+}
+
+/* Payment Gateway */
+.payment-gateway-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 0;
+}
+.payment-card {
+    background: linear-gradient(145deg, #2a3a55, #1a253a);
+    padding: 30px;
+    border-radius: 20px;
+    max-width: 450px;
+    width: 100%;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    position: relative;
+}
+.qr-code {
+    display: block;
+    margin: 0 auto 20px auto;
+    width: 150px;
+    border-radius: 10px;
+    border: 5px solid #34d399;
+}
+.btn-network {
+    background-color: #334155;
+    color: #fff;
+    border: none;
+    margin: 0 5px;
+}
+.btn-network.active {
+    background-color: #34d399;
+    color: #1e293b;
+}
+.wallet-address-box {
+    background-color: #0f172a;
+    padding: 15px;
+    border-radius: 10px;
+    word-wrap: break-word;
+    text-align: center;
+    border: 1px solid #334155;
+}
+.payment-card .form-control {
+    background-color: #334155;
+    border: 1px solid #475569;
+    color: #fff;
+}
+.payment-card .form-control::placeholder {
+    color: #94a3b8;
+}
+.btn-success {
+    background-color: #34d399;
+    border: none;
+}
+.timer {
+    position: absolute;
+    bottom: 10px;
+    right: 20px;
+    background-color: rgba(0,0,0,0.3);
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 0.9rem;
+}
+
+
