@@ -1,12 +1,16 @@
+
+
+
+
 document.addEventListener("DOMContentLoaded", function() {
-    // Function to load a component from a file into a placeholder element
+    
     const loadComponent = (componentPath, placeholderId) => {
         const placeholder = document.getElementById(placeholderId);
         if (placeholder) {
             fetch(componentPath)
                 .then(response => {
                     if (!response.ok) {
-                        throw new Error(`Could not load ${componentPath}`);
+                        throw new Error(`Could not load ${componentPath}, status: ${response.status}`);
                     }
                     return response.text();
                 })
@@ -15,12 +19,12 @@ document.addEventListener("DOMContentLoaded", function() {
                 })
                 .catch(error => {
                     console.error('Error loading component:', error);
-                    placeholder.innerHTML = `<p style="color:red;">Error loading ${placeholderId}.</p>`;
+                    placeholder.innerHTML = `<p style="text-align:center; color:red;">Error: Could not load ${placeholderId}.</p>`;
                 });
         }
     };
 
-    // Load header and footer
+  
     loadComponent('header.html', 'header-placeholder');
     loadComponent('footer.html', 'footer-placeholder');
 });
