@@ -5,6 +5,10 @@
 /* Content sections on the about page */
 .about-content {
     padding: 40px 0;
+    
+}
+.ab{
+    background-color: #1e293b;
 }
 
 .about-content h2 {
@@ -27,6 +31,7 @@
 .why-choose-us {
     padding-top: 60px;
     padding-bottom: 60px;
+    
 }
 
 .feature-card {

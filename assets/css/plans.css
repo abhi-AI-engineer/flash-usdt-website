@@ -1,0 +1,142 @@
+
+/* Main content area padding */
+main.container.plans {
+    padding-top: 80px;
+    padding-bottom: 80px;
+}
+
+/* ------ Section Title ------ */
+.plans-section .section-title {
+    font-size: 2.5rem; /* 40px */
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 50px;
+    text-align: center;
+}
+
+/* ------ Plan Card Styling ------ */
+
+/* The main card for each plan */
+.plan-card {
+    background: linear-gradient(145deg, #1e293b, #0f172a); /* Dark gradient background */
+    border: 1px solid #334155;  /* Subtle border */
+    border-radius: 16px;        /* More rounded corners */
+    padding: 35px 30px;
+    text-align: center;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25); /* Softer, deeper shadow */
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    height: 100%; /* Ensures all cards in a row have the same height */
+    display: flex;
+    flex-direction: column; /* Aligns content vertically */
+}
+
+/* Hover effect for the plan card */
+.plan-card:hover {
+    transform: translateY(-12px) scale(1.02); /* Lifts and slightly enlarges the card */
+    box-shadow: 0 15px 30px rgba(255, 193, 7, 0.2); /* Glowing shadow on hover */
+    border-color: #ffc107; /* Highlight border on hover */
+}
+
+/* ------ Card Content ------ */
+
+/* Icon styling ('T' symbol) */
+.plan-card .plan-icon {
+    background-color: #ffc107; /* Yellow background */
+    color: #111827;            /* Dark text for contrast */
+    font-size: 28px;
+    font-weight: bold;
+    width: 65px;
+    height: 65px;
+    line-height: 65px;         /* Vertically centers the text */
+    border-radius: 50%;        /* Makes it a perfect circle */
+    margin: 0 auto 25px;       /* Centers it with space below */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Plan title (e.g., Starter Plan) */
+.plan-card h5 {
+    font-size: 1.5rem; /* 24px */
+    font-weight: 600;
+    color: #f8fafc; /* Brighter white for the title */
+    margin-bottom: 20px;
+}
+
+/* Plan price styling */
+.plan-card .plan-price {
+    font-size: 2.25rem; /* 36px */
+    font-weight: 700;
+    color: #ffc107; /* Yellow to highlight the price */
+    margin-bottom: 25px;
+}
+
+/* Muted text inside the price (e.g., /30 Day) */
+.plan-card .plan-price  {
+    font-size: 1rem; /* 16px */
+    font-weight: 400;
+    color: #eef1f5 !important; /* Lighter grey for better readability */
+}
+
+/* ------ Features List ------ */
+.plan-card ul {
+    margin-bottom: 35px;
+    padding-left: 0;
+    list-style-type: none;
+    flex-grow: 1; /* This is the key: it pushes the button to the bottom */
+}
+
+.plan-card ul li {
+    color: #cbd5e1; /* Light grey for feature text */
+    padding: 10px 0;
+    font-size: 1rem; /* 16px */
+    border-bottom: 1px solid #334155; /* Separator line between features */
+}
+
+.plan-card ul li:last-child {
+    border-bottom: none; /* No line for the last item */
+}
+
+/* ------ "Buy Now" Button ------ */
+.plan-card .btn-warning {
+    background-color: #ffc107;
+    border: 2px solid #ffc107;
+    color: #111827;
+    font-size: 1rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 14px 20px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    width: 100%;
+}
+
+.plan-card .btn-warning:hover {
+    background-color: transparent; /* Make background transparent on hover */
+    border-color: #ffc107; /* Keep the yellow border */
+    color: #ffc107; /* Make text yellow */
+}
+
+
+
+
+
+#footer-placeholder{
+   
+    color: #cbd5e1;
+}
+body{
+    background-color: #0F172A !important;
+}
+
+
+
+
+
+
+
+
+
+
+

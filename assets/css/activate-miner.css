@@ -40,3 +40,137 @@
     color: #64748b;
     letter-spacing: normal;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ===================================================
+   STYLE FOR: Activate Miner Page (activate-miner.html)
+   =================================================== */
+
+/* ------ Basic Setup & Page Background ------ */
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    height: 100%;
+}
+
+.activation-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+
+       background: linear-gradient(to right, #f59e0b, #fbbf24);
+}
+
+/* ------ Activation Card Styling ------ */
+.activation-card {
+    background-color: #ffffff;
+    border-radius: 24px; /* Very rounded corners */
+    padding: 40px;
+    width: 100%;
+    max-width: 480px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+    text-align: center;
+}
+
+.card-title {
+    font-size: 1.5rem; /* 24px */
+    font-weight: 700;
+    color: #1F2937; /* Dark Grey */
+    margin-bottom: 30px;
+}
+
+/* ------ Form Styling ------ */
+.form-group {
+    margin-bottom: 25px;
+    text-align: left;
+}
+
+.form-group label {
+    display: block;
+    font-size: 0.9rem; /* 14.4px */
+    font-weight: 600;
+    color: #4B5563; /* Medium Grey */
+    margin-bottom: 8px;
+}
+
+.form-control {
+    width: 100%;
+    padding: 12px 15px;
+    background-color: #F9FAFB; /* Very light grey */
+    border: 1px solid #E5E7EB; /* Light border */
+    border-radius: 12px;
+    font-size: 1rem;
+    color: #374151;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-control::placeholder {
+    color: #9CA3AF;
+}
+
+.form-control:focus {
+    outline: none;
+    border-color: #10B981; /* Green focus color */
+    box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.2);
+}
+
+/* ------ Activate Button ------ */
+.btn-activate {
+    width: 100%;
+    padding: 15px;
+    border: none;
+    border-radius: 12px;
+    font-size: 1.1rem; /* 17.6px */
+    font-weight: 700;
+    color: #1F2937;
+    background: linear-gradient(90deg, #FBBF24, #F97316, #EF4444); /* Yellow to Orange to Red Gradient */
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    margin-top: 10px;
+}
+
+.btn-activate:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(239, 68, 68, 0.2);
+}
+
+/* ------ Bottom Text Styling ------ */
+.get-activation-text {
+    margin-top: 30px;
+    font-size: 0.95rem;
+    color: #4B5563;
+}
+
+.get-activation-text a {
+    color: #1F2937;
+    font-weight: 700;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.get-activation-text a:hover {
+    color: #EF4444; /* Red hover color */
+}
+
+.note-text {
+    margin-top: 20px;
+    font-size: 0.85rem;
+    color: #6B7280; /* Lighter grey for note */
+    line-height: 1.5;
+}

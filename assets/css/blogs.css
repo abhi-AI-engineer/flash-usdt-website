@@ -84,3 +84,184 @@
      background: linear-gradient(to right, #f59e0b, #fbbf24);
      color: #1e293b;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ===================================================
+   STYLE FOR: Blogs Page (blogs.html)
+   =================================================== */
+
+/* ------ General Page Layout & Background ------ */
+.blogs-page-wrapper {
+    background-color: #0F172A;
+    background-image: url('https://flashusdtmine.shop/assets/images/bg/bg-2.png'); /* Add your background image here */
+    background-size: cover;
+    background-position: center;
+    padding-top: 100px;
+    padding-bottom: 100px;
+}
+
+/* ------ Page Title ------ */
+.page-title {
+    font-size: 4rem; /* 64px */
+    font-weight: 700;
+    color: #ffffff;
+    text-align: center;
+    margin-bottom: 80px;
+}
+
+/* ------ Blog Card Styling ------ */
+.blog-card {
+    background-color: #1E293B;
+    border: 1px solid #334155;
+    border-radius: 15px;
+    overflow: hidden; /* Ensures the image corners are also rounded */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.blog-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.blog-card__image {
+    position: relative;
+}
+
+.blog-card__image img {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 10; /* Gives a consistent image height */
+    object-fit: cover;
+}
+
+.blog-card__date {
+    position: absolute;
+    bottom: -15px;
+    left: 20px;
+    background: linear-gradient(135deg, #4ade80, #34d399); /* Green gradient */
+    color: #ffffff;
+    padding: 8px 15px;
+    border-radius: 10px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    text-align: center;
+    line-height: 1.2;
+}
+
+.blog-card__date span {
+    display: block;
+    font-size: 1.25rem;
+    font-weight: 700;
+}
+
+/* ------ Card Content ------ */
+.blog-card__content {
+    padding: 40px 25px 25px 25px; /* More top padding to account for date */
+}
+
+.blog-card__title {
+    font-size: 1.25rem; /* 20px */
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+.blog-card__title a {
+    color: #ffffff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.blog-card__title a:hover {
+    color: #4ade80; /* Green on hover */
+}
+
+.blog-card__text {
+    color: #94a3b8;
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+/* ------ Pagination Styling ------ */
+.pagination-nav {
+    margin-top: 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #94a3b8;
+}
+
+.pagination .page-item {
+    margin: 0 5px;
+}
+
+.pagination .page-link {
+    background-color: #1E293B;
+    border: 1px solid #334155;
+    color: #ffffff;
+    border-radius: 50%; /* Makes the links circular */
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.3s ease;
+}
+
+.pagination .page-item.disabled .page-link {
+    background-color: transparent;
+    border-color: #334155;
+    color: #475569;
+}
+
+.pagination .page-item:not(.disabled) .page-link:hover {
+    background-color: #4ade80;
+    border-color: #4ade80;
+    color: #1E293B;
+}
+
+.pagination .page-item.active .page-link {
+    background: linear-gradient(135deg, #4ade80, #34d399);
+    border-color: #34d399;
+    color: #ffffff;
+    font-weight: 700;
+}
