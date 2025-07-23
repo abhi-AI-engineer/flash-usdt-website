@@ -11,7 +11,9 @@
      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
-
+<div id="preloader">
+        <img src="assets/images/homeimage/preloaderimg.png" alt="Loading...">
+    </div>
     <div id="header-placeholder"></div>
 
     <main class="blogs-page-wrapper">
@@ -43,6 +45,19 @@
     <!-- Blog Functionality Scripts -->
     <script src="assets/js/blog-data.js"></script>
     <script src="assets/js/blogs-page.js"></script>
-
+ <script type="text/javascript">
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement(
+                {
+                    pageLanguage: 'en', // अपनी वेबसाइट की मूल भाषा यहाँ सेट करें
+                    layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+                }, 
+                'google_translate_element'
+            );
+        }
+    </script>
+    <script src="assets/js/main.js"></script> 
+    <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+    <!-- ===== GOOGLE TRANSLATE SCRIPT END ===== -->
 </body>
 </html>

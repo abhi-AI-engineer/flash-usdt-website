@@ -8,23 +8,148 @@ body {
     background-color: #0f172a;
 }
 
-html, body {
-    margin: 0;
-    padding: 0;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ============================================== */
+/* GOOGLE TRANSLATE WIDGET - CUSTOM NAVBAR STYLING */
+/* ============================================== */
+
+/* गूगल द्वारा अनुवाद के बाद जो टॉप पर काली पट्टी आती है, उसे छिपाएं */
+.goog-te-banner-frame.skiptranslate {
+    display: none !important;
+} 
+body {
+    top: 0px !important; 
+}
+
+/* "Powered by Google" टेक्स्ट और लोगो को छिपाएं */
+.goog-logo-link {
+    display:none !important;
+}
+.goog-te-gadget {
+    font-size: 0 !important; /* "Powered by" टेक्स्ट को अदृश्य करने के लिए */
+}
+.VIpgJd-ZVi9od-l4eHX-hSRGPd {
+    display: none !important; /* गूगल का नया टूलटिप छिपाने के लिए */
+}
+
+
+/* ड्रॉपडाउन को एक कस्टम बटन जैसा स्टाइल दें */
+#google_translate_element select {
+    /* ब्राउज़र की डिफ़ॉल्ट स्टाइलिंग हटाएं */
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+
+    /* कस्टम स्टाइलिंग */
+    background-color: transparent; /* बैकग्राउंड को पारदर्शी बनाएं */
+    color: #ffffff; /* टेक्स्ट का रंग सफ़ेद */
+    border: 1px solid #ffc107; /* आपके बटनों जैसा पीला बॉर्डर */
+    border-radius: 6px; /* आपके बटनों जैसे गोल किनारे */
+    padding: 8px 35px 8px 15px !important ;/* टॉप, राइट, बॉटम, लेफ्ट स्पेसिंग */
+    cursor: pointer;
+    font-size: 1rem; /* Navbar के फॉन्ट साइज़ से मैच करें */
+    font-weight: 500;
+    height: 42px; /* आपके बटनों की ऊंचाई से मैच करें */
+    transition: all 0.3s ease; /* होवर पर स्मूथ इफ़ेक्ट के लिए */
+
+    /* ड्रॉपडाउन के लिए कस्टम तीर (एरो) */
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23ffc107' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M2 5l6 6 6-6'/%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: right 0.75rem center;
+    background-size: 16px 12px;
+}
+
+/* होवर करने पर स्टाइल बदलें */
+#google_translate_element select:hover {
+    background-color: rgba(255, 193, 7, 0.1); /* हल्का पीला बैकग्राउंड */
+    border-color: #fce8a5;
+}
+
+/* ड्रॉपडाउन खुलने पर विकल्पों (options) का स्टाइल */
+#google_translate_element select option {
+    background: #1a2035; /* आपकी वेबसाइट का डार्क बैकग्राउंड */
+    color: #ffffff;
+}
+/* assets/css/style.css */
+@keyframes spin {
+    /* एनिमेशन की शुरुआत में (0%) इमेज 0 डिग्री पर घूमी होगी */
+    from {
+        transform: rotate(0deg);
+    }
+    /* एनिमेशन के अंत में (100%) इमेज 360 डिग्री (एक पूरा चक्कर) घूम चुकी होगी */
+    to {
+        transform: rotate(360deg);
+    }
+}
+/* ========== PRELOADER STYLES ========== */
+#preloader {
+    position: fixed; /* स्क्रीन पर फिक्स रहेगा */
+    top: 0;
+    left: 0;
     width: 100%;
-    overflow-x: hidden; /* Horizontal scrollbar ko rokne ke liye */
-    background-color: #0F172A; /* Yeh aapka main background color hai */
-    color: #E2E8F0; /* Default text color for the entire site */
+    height: 100%;
+    z-index: 9999; /* यह सुनिश्चित करेगा कि यह सबसे ऊपर दिखे */
+    
+    /* बैकग्राउंड का रंग (आप इसे अपनी वेबसाइट के हिसाब से बदल सकते हैं) */
+    background-color: #0F172A; 
+    
+    /* स्पिनर इमेज को स्क्रीन के बिल्कुल बीच में लाने के लिए */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* प्रीलोडर को छिपाने के लिए क्लास (इसे जावास्क्रिप्ट इस्तेमाल करेगा) */
+.preloader-hidden {
+    /* धीरे-धीरे गायब होने का इफ़ेक्ट */
+    transition: opacity 0.90s ease-out, visibility 0.90s ease-out;
+    opacity: 0;
+    visibility: hidden;
+}
+
+/* स्पिनर इमेज का साइज़ (आप इसे अपनी इमेज के अनुसार बदल सकते हैं) */
+#preloader img {
+    width: 250px; 
+    height: auto;
+    animation: spin 2s linear infinite;
 }
 
 /* Header and Navbar */
 .nav{
-    background-color: #0F172A !important;
+    background-color: hsl(222, 47%, 11%) !important;
 }
 .navbar-brand {
     font-weight: bold;
     font-size: 1.5rem;
-    color: #f59e0b !important;
+    color: hsl(38, 92%, 50%) !important;
 }
 .nav-link {
     color: #cbd5e1 !important;
@@ -64,10 +189,45 @@ section {
     color: #cbd5e1;
 }
 
-/* Hero Section */
+
+/* style.css */
+
 .hero-section {
-    padding: 80px 0;
+    
+     
+    background-image: url('../images/homeimage/home11111.png');
+    
+    
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+
+   
+    min-height: 60vh; 
+    margin-top: 10px;
+    margin-bottom: 10px;
+    
+    
+    
+   
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
+
+.hero-section h1, .hero-section .text-muted {
+    color: #ffffff !important; 
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.6);
+}
+
+
+
+
+
+
+
+
 .hero-section h1 {
     font-size: 3rem;
     font-weight: bold;

@@ -22,7 +22,9 @@
 
     
     <!-- HEADER / NAVIGATION BAR START -->
- 
+ <div id="preloader">
+        <img src="assets/images/homeimage/preloaderimg.png" alt="Loading...">
+    </div>
     
     <div id="header-placeholder"></div>
  
@@ -63,7 +65,78 @@
                      <button type="submit" class="btn btn-success w-100">Complete Payment</button>
                  </form>
                  
-                 <p class="mt-3 text-center text-muted small">Note: Activation Key received via Email after successful payment.</p>
+                 <p class="mt-3 text-center text-muted small">Note: Activation Key received via Email Aotometic     <script>
+        document.addEventListener('DOMContentLoaded', function() {
+         
+           
+            const copyButton = document.getElementById('copy-button');
+            const walletAddress = document.getElementById('wallet-address');
+
+            copyButton.addEventListener('click', function() {
+                navigator.clipboard.writeText(walletAddress.innerText).then(function() {
+                   
+                    copyButton.innerText = 'Copied!';
+                   
+                    setTimeout(() => {
+                        copyButton.innerText = 'Copy Wallet Address';
+                    }, 2000);
+                }).catch(function(err) {
+                    console.error('Could not copy text: ', err);
+                });
+            });
+
+            
+            const networkSelector = document.getElementById('network-selector');
+            const walletAddresses = {
+                'TRC20': 'TRC20_WALLET_ADDRESS_HERE_e22h6RDmsbqz',
+                'ERC20': 'ERC20_WALLET_ADDRESS_HERE_xxxxxxxxxxxx',
+                'BEP20': 'BEP20_WALLET_ADDRESS_HERE_yyyyyyyyyyyy'
+            };
+
+            networkSelector.addEventListener('click', function(e) {
+               
+                if (e.target.tagName === 'BUTTON') {
+                    
+                    networkSelector.querySelectorAll('button').forEach(btn => btn.classList.remove('active'));
+                    
+                    
+                    e.target.classList.add('active');
+                    
+                    const selectedNetwork = e.target.dataset.network;
+                    walletAddress.innerText = walletAddresses[selectedNetwork];
+                }
+            });
+
+            
+            const timerDisplay = document.getElementById('timer');
+            
+            
+            let durationInSeconds = 20 * 60;
+
+            
+            const countdownInterval = setInterval(function() {
+                
+                const minutes = Math.floor(durationInSeconds / 60);
+                let seconds = durationInSeconds % 60;
+
+                
+                seconds = seconds < 10 ? '0' + seconds : seconds;
+
+                timerDisplay.textContent = `${minutes}:${seconds}`;
+
+                
+                durationInSeconds--;
+
+                
+                if (durationInSeconds < 0) {
+                    clearInterval(countdownInterval); 
+                    timerDisplay.textContent = "00:00"; 
+                   
+                }
+            }, 1000); 
+
+        });
+    </script> after successful payment.</p>
                  <div id="timer" class="timer">19:38</div>
             </div>
         </div>
@@ -128,6 +201,19 @@
             });
         });
     </script>
-
+ <script type="text/javascript">
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement(
+                {
+                    pageLanguage: 'en', // अपनी वेबसाइट की मूल भाषा यहाँ सेट करें
+                    layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+                }, 
+                'google_translate_element'
+            );
+        }
+    </script>
+    <script src="assets/js/main.js"></script> 
+    <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+    <!-- ===== GOOGLE TRANSLATE SCRIPT END ===== -->
 </body>
 </html>
