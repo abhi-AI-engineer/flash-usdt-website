@@ -195,7 +195,7 @@ section {
 .hero-section {
     
      
-    background-image: url('../images/homeimage/home11111.png');
+    background-image: url('../images/homeimage/blog-1-content.jpg');
     
     
     background-size: cover;
@@ -203,7 +203,7 @@ section {
     background-repeat: no-repeat;
 
    
-    min-height: 60vh; 
+    min-height: 70vh; 
     margin-top: 10px;
     margin-bottom: 10px;
     
