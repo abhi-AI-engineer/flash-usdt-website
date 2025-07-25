@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Step</title>
+    <!-- अपनी मुख्य CSS और Bootstrap लिंक करें -->
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/payment-step.css">
+  
+</head>
+<body>
+    <div class="payment-step-container">
+        <h2>Confirm Your Wallet</h2>
+        <div class="wallet-info">
+            <p><strong>Wallet Address:</strong> <span id="wallet-address"></span></p>
+            <small>"Wallet has been automatically detected, not required."</small>
+            <hr>
+            <p><strong>Wallet Name:</strong> <span id="wallet-name"></span></p>
+        </div>
+        <a href="payment.html" class="cmn--btn">Next (Proceed to Payment)</a>
+    </div>
+
+    <script>
+        // यह जावास्क्रिप्ट वॉलेट की जानकारी (सैंपल) दिखाएगा
+        document.addEventListener("DOMContentLoaded", function() {
+            // यह सैंपल डेटा है, असल में यह बैकएंड से आएगा
+            const walletAddress = "0xAbCd...1234";
+            const walletName = "My MetaMask";
+
+            document.getElementById("wallet-address").textContent = walletAddress;
+            document.getElementById("wallet-name").textContent = walletName;
+        });
+    </script>
+</body>
+</html>

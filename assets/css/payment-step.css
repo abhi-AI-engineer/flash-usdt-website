@@ -1,0 +1,47 @@
+   .payment-step-container {
+            max-width: 600px;
+            margin: 80px auto;
+            padding: 40px;
+            background: #1a203c; /* थीम से मिलता-जुलता रंग */
+            border-radius: 10px;
+            text-align: center;
+            color: #fff;
+        }
+        .wallet-info {
+            margin-bottom: 30px;
+            padding: 20px;
+            background: #2a3150;
+            border-radius: 8px;
+        }
+        .wallet-info p {
+            margin: 0;
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        .payment-step-container .cmn--btn {
+    background-color: #ffc107; /* पीला बैकग्राउंड */
+    border: 2px solid #ffc107;
+    color: #0d1224; /* गहरा टेक्स्ट कलर */
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.payment-step-container .cmn--btn:hover {
+    background-color: #e0a800; /* होवर पर थोड़ा गहरा पीला */
+    border-color: #e0a800;
+    text-decoration: none;
+}
