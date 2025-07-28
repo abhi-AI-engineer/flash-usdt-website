@@ -1,37 +1,83 @@
+
 <!DOCTYPE html>
-<html lang="en">
+<html lang="hi">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Payment Step</title>
-    <!-- अपनी मुख्य CSS और Bootstrap लिंक करें -->
+    <title>Wallet Confirmation Page</title>
     <link rel="stylesheet" href="assets/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/payment-step.css">
-  
 </head>
 <body>
+
     <div class="payment-step-container">
+        
+        <div id="flash-message" style="display: none;"></div>
+
         <h2>Confirm Your Wallet</h2>
-        <div class="wallet-info">
-            <p><strong>Wallet Address:</strong> <span id="wallet-address"></span></p>
-            <small>"Wallet has been automatically detected, not required."</small>
-            <hr>
-            <p><strong>Wallet Name:</strong> <span id="wallet-name"></span></p>
-        </div>
-        <a href="payment.html" class="cmn--btn">Next (Proceed to Payment)</a>
+
+        <form id="walletForm" class="wallet-info">
+           
+            <div class="form-group">
+                <label for="walletAddress">1. Please enter your wallet address</label>
+                <input type="text" id="walletAddress" placeholder="Enter your wallet address here">
+            </div>
+
+        
+            <div class="form-group">
+                <label for="network">2. Select your network</label>
+                <select id="network">
+                    <option value="trc20">TRC20</option>
+                    <option value="erc20">ERC20</option>
+                    <option value="bep20">BEP20</option>
+                </select>
+            </div>
+            
+            
+           
+             <a href="payment.html" id="nextLink" class="cmn--btn">Next (Proceed to Payment)</a>
+        </form>
     </div>
 
-    <script>
-        // यह जावास्क्रिप्ट वॉलेट की जानकारी (सैंपल) दिखाएगा
-        document.addEventListener("DOMContentLoaded", function() {
-            // यह सैंपल डेटा है, असल में यह बैकएंड से आएगा
-            const walletAddress = "0xAbCd...1234";
-            const walletName = "My MetaMask";
+    
+    <script src="script.js"></script>
 
-            document.getElementById("wallet-address").textContent = walletAddress;
-            document.getElementById("wallet-name").textContent = walletName;
-        });
-    </script>
+
+<script>
+
+    document.addEventListener('DOMContentLoaded', function() {
+    
+    const walletForm = document.getElementById('walletForm');
+    const flashMessageDiv = document.getElementById('flash-message');
+
+    walletForm.addEventListener('submit', function(event) {
+        event.preventDefault(); 
+
+        const walletAddress = document.getElementById('walletAddress').value;
+
+       
+        flashMessageDiv.style.display = 'none';
+        flashMessageDiv.textContent = '';
+        flashMessageDiv.className = ''; 
+
+        if (walletAddress.trim() === '') {
+            
+            flashMessageDiv.textContent = 'Please enter your wallet address.';
+            flashMessageDiv.classList.add('flash-error'); 
+            flashMessageDiv.style.display = 'block';
+        } else {
+            
+            flashMessageDiv.textContent = 'Your wallet address has been received successfully!';
+            flashMessageDiv.classList.add('flash-success'); 
+            flashMessageDiv.style.display = 'block';
+
+          
+        }
+    });
+});
+</script>
+
+
 </body>
 </html>

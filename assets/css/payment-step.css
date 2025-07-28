@@ -1,21 +1,3 @@
-   .payment-step-container {
-            max-width: 600px;
-            margin: 80px auto;
-            padding: 40px;
-            background: #1a203c; /* थीम से मिलता-जुलता रंग */
-            border-radius: 10px;
-            text-align: center;
-            color: #fff;
-        }
-        .wallet-info {
-            margin-bottom: 30px;
-            padding: 20px;
-            background: #2a3150;
-            border-radius: 8px;
-        }
-        .wallet-info p {
-            margin: 0;
-        }
 
 
 
@@ -27,21 +9,116 @@
 
 
 
+/* बेसिक पेज स्टाइल */
+body {
+    font-family: Arial, sans-serif;
+    background: #0d1224; /* गहरा बैकग्राउंड */
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
 
+/* मुख्य कंटेनर, स्क्रीनशॉट के अनुसार */
+.payment-step-container {
+    width: 100%;
+    max-width: 600px;
+    padding: 40px;
+    background: #1a203c; /* थीम का नीला रंग */
+    border-radius: 10px;
+    text-align: center;
+}
 
+h2 {
+    margin-bottom: 30px;
+    font-size: 24px;
+}
 
+/* फ़ॉर्म का बैकग्राउंड बॉक्स */
+.wallet-info {
+    padding: 30px;
+    background: #2a3150;
+    border-radius: 8px;
+    text-align: left; /* फ़ॉर्म लेबल को बाईं ओर रखें */
+}
 
+.form-group {
+    margin-bottom: 25px;
+}
 
-        .payment-step-container .cmn--btn {
+.form-group label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+    color: #ccc;
+}
+
+/* इनपुट और सिलेक्ट फ़ील्ड स्टाइल */
+input[type="text"],
+select {
+    width: 100%;
+    padding: 12px;
+    background-color: #1a203c;
+    border: 1px solid #4a5178;
+    border-radius: 5px;
+    color: #fff;
+    font-size: 16px;
+    box-sizing: border-box;
+}
+
+/* Next बटन का स्टाइल, स्क्रीनशॉट के अनुसार */
+.cmn--btn {
+    width: 100%;
+    display: inline-block;
+    padding: 15px;
     background-color: #ffc107; /* पीला बैकग्राउंड */
-    border: 2px solid #ffc107;
+    border: none;
+    border-radius: 5px;
     color: #0d1224; /* गहरा टेक्स्ट कलर */
     font-weight: bold;
+    font-size: 16px;
+    text-align: center;
     text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
 }
 
-.payment-step-container .cmn--btn:hover {
+.cmn--btn:hover {
     background-color: #e0a800; /* होवर पर थोड़ा गहरा पीला */
-    border-color: #e0a800;
-    text-decoration: none;
 }
+
+/* 3. फ़्लैश संदेश स्टाइल */
+#flash-message {
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    color: #fff;
+    font-weight: bold;
+    text-align: center;
+}
+
+.flash-success {
+    background-color: #28a745; /* सफलता के लिए हरा */
+}
+
+.flash-error {
+    background-color: #dc3545; /* त्रुटि के लिए लाल */
+}
+
+/* 5. स्क्रॉल आइकन का आकार छोटा करने का स्टाइल */
+::-webkit-scrollbar {
+    width: 6px; /* स्क्रॉलबार की चौड़ाई कम की गई */
+}
+::-webkit-scrollbar-track {
+    background: #1a203c;
+}
+::-webkit-scrollbar-thumb {
+    background: #555;
+    border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #777;
+}
+

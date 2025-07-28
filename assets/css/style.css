@@ -1,4 +1,4 @@
-/* General Body Styles */
+
 body {
     background-color: #0f172a;
     color: #e2e8f0;
@@ -37,11 +37,6 @@ body {
 
 
 
-/* ============================================== */
-/* GOOGLE TRANSLATE WIDGET - CUSTOM NAVBAR STYLING */
-/* ============================================== */
-
-/* गूगल द्वारा अनुवाद के बाद जो टॉप पर काली पट्टी आती है, उसे छिपाएं */
 .goog-te-banner-frame.skiptranslate {
     display: none !important;
 } 
@@ -49,21 +44,21 @@ body {
     top: 0px !important; 
 }
 
-/* "Powered by Google" टेक्स्ट और लोगो को छिपाएं */
+
 .goog-logo-link {
     display:none !important;
 }
 .goog-te-gadget {
-    font-size: 0 !important; /* "Powered by" टेक्स्ट को अदृश्य करने के लिए */
+    font-size: 0 !important; 
 }
 .VIpgJd-ZVi9od-l4eHX-hSRGPd {
-    display: none !important; /* गूगल का नया टूलटिप छिपाने के लिए */
+    display: none !important; 
 }
 
 
-/* ड्रॉपडाउन को एक कस्टम बटन जैसा स्टाइल दें */
+
 #google_translate_element select {
-    /* ब्राउज़र की डिफ़ॉल्ट स्टाइलिंग हटाएं */
+    
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
@@ -137,7 +132,7 @@ body {
 
 /* स्पिनर इमेज का साइज़ (आप इसे अपनी इमेज के अनुसार बदल सकते हैं) */
 #preloader img {
-    width: 250px; 
+    width: 150px; 
     height: auto;
     animation: spin 2s linear infinite;
 }
