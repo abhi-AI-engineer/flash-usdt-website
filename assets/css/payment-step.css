@@ -1,124 +1,125 @@
+/* General Body and Font Styles */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 
-
-
-
-
-
-
-
-
-
-
-/* बेसिक पेज स्टाइल */
 body {
-    font-family: Arial, sans-serif;
-    background: #0d1224; /* गहरा बैकग्राउंड */
-    color: #fff;
+    font-family: 'Poppins', sans-serif;
+    background-color: #0a121c; 
+    color: #e0e0e0;
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
+    margin: 0;
     padding: 20px;
+    box-sizing: border-box;
 }
 
-/* मुख्य कंटेनर, स्क्रीनशॉट के अनुसार */
+
 .payment-step-container {
-    width: 100%;
-    max-width: 600px;
+    background-color: #111a27; /* कंटेनर का गहरा बैकग्राउंड */
     padding: 40px;
-    background: #1a203c; /* थीम का नीला रंग */
     border-radius: 10px;
-    text-align: center;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    max-width: 550px;
+    width: 100%;
+    border: 2px solid;
+    /* ग्रेडिएंट बॉर्डर */
+    border-image-source: linear-gradient(to right, #4e54c8, #8f94fb);
+    border-image-slice: 1;
 }
 
+/* Heading Style */
 h2 {
+    color: #ffffff;
+    text-align: center;
     margin-bottom: 30px;
-    font-size: 24px;
+    font-weight: 600;
 }
 
-/* फ़ॉर्म का बैकग्राउंड बॉक्स */
-.wallet-info {
-    padding: 30px;
-    background: #2a3150;
-    border-radius: 8px;
-    text-align: left; /* फ़ॉर्म लेबल को बाईं ओर रखें */
-}
-
+/* Form Group Spacing */
 .form-group {
     margin-bottom: 25px;
 }
 
+/* Label Styles */
 .form-group label {
     display: block;
-    margin-bottom: 10px;
-    font-weight: bold;
-    color: #ccc;
-}
-
-/* इनपुट और सिलेक्ट फ़ील्ड स्टाइल */
-input[type="text"],
-select {
-    width: 100%;
-    padding: 12px;
-    background-color: #1a203c;
-    border: 1px solid #4a5178;
-    border-radius: 5px;
-    color: #fff;
+    color: #adb5bd; /* हल्का ग्रे टेक्स्ट */
+    margin-bottom: 8px;
     font-size: 16px;
-    box-sizing: border-box;
 }
 
-/* Next बटन का स्टाइल, स्क्रीनशॉट के अनुसार */
-.cmn--btn {
+/* Input and Select Fields Styles */
+#walletAddress, #network {
     width: 100%;
-    display: inline-block;
+    background-color: transparent;
+    border: 1px solid #3d4a5a; /* बॉर्डर का रंग */
+    color: #ffffff;
     padding: 15px;
-    background-color: #ffc107; /* पीला बैकग्राउंड */
-    border: none;
-    border-radius: 5px;
-    color: #0d1224; /* गहरा टेक्स्ट कलर */
-    font-weight: bold;
+    border-radius: 8px;
     font-size: 16px;
+    box-sizing: border-box; /* सही पैडिंग के लिए */
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Placeholder Text Style */
+#walletAddress::placeholder {
+    color: #6c757d;
+}
+
+/* Focus effect for input/select */
+#walletAddress:focus, #network:focus {
+    outline: none;
+    border-color: #8f94fb; /* फोकस पर बॉर्डर का रंग */
+    box-shadow: 0 0 0 3px rgba(143, 148, 251, 0.2);
+}
+
+/* Select dropdown options style */
+#network option {
+    background-color: #111a27;
+    color: #ffffff;
+}
+
+/* Common Button Style (cmn--btn) */
+.cmn--btn {
+    display: block;
+    width: 100%;
+    background-image: linear-gradient(90deg, #007bff, #8a2be2); /* नीला-बैंगनी ग्रेडिएंट */
+    color: #ffffff;
+    font-weight: bold;
     text-align: center;
+    padding: 15px;
+    border-radius: 8px;
     text-decoration: none;
+    border: none;
     cursor: pointer;
-    transition: background-color 0.3s;
+    font-size: 18px;
+    transition: all 0.3s ease;
+    margin-top: 30px;
 }
 
 .cmn--btn:hover {
-    background-color: #e0a800; /* होवर पर थोड़ा गहरा पीला */
+    filter: brightness(1.2); /* होवर पर थोड़ी चमक */
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(143, 148, 251, 0.3);
 }
 
-/* 3. फ़्लैश संदेश स्टाइल */
+/* Flash Message Styles */
 #flash-message {
     padding: 15px;
     margin-bottom: 20px;
-    border-radius: 5px;
-    color: #fff;
-    font-weight: bold;
+    border-radius: 8px;
+    color: #ffffff;
     text-align: center;
+    font-weight: 500;
 }
 
 .flash-success {
-    background-color: #28a745; /* सफलता के लिए हरा */
+    background-color: #28a745; /* हरा रंग */
+    border: 1px solid #218838;
 }
 
 .flash-error {
-    background-color: #dc3545; /* त्रुटि के लिए लाल */
+    background-color: #dc3545; /* लाल रंग */
+    border: 1px solid #c82333;
 }
-
-/* 5. स्क्रॉल आइकन का आकार छोटा करने का स्टाइल */
-::-webkit-scrollbar {
-    width: 6px; /* स्क्रॉलबार की चौड़ाई कम की गई */
-}
-::-webkit-scrollbar-track {
-    background: #1a203c;
-}
-::-webkit-scrollbar-thumb {
-    background: #555;
-    border-radius: 3px;
-}
-::-webkit-scrollbar-thumb:hover {
-    background: #777;
-}
-
