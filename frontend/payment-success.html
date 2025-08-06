@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Successful - Flash USDT</title>
+    <link href="./assets/images/homeimage/final-logo.png" rel="icon">
+    
+    <link rel="stylesheet" href="assets/bootstrap-5.3.7-dist/css/bootstrap.min.css">
+
+    <!-- html2canvas & jsPDF -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+    <style>
+        body {
+            background-color: #0f172a;
+            color: white;
+        }
+
+        .top-buttons {
+            position: fixed;
+            top: 15px;
+            left: 15px;
+            display: flex;
+            gap: 10px;
+            z-index: 1000;
+        }
+
+        .receipt-container {
+            max-width: 700px;
+            margin: 80px auto 40px auto;
+            background: #1e293b;
+            padding: 25px;
+            border-radius: 10px;
+        }
+
+        h2 {
+            color: #22c55e; /* Green heading */
+            text-align: center;
+            margin-bottom: 10px;
+        }
+
+        p.text-muted {
+            color: #94a3b8 !important;
+            text-align: center;
+        }
+
+        /* Table style */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+        }
+
+        th, td {
+            border: 1px solid #22c55e; /* Green grid lines */
+            padding: 10px;
+            background: #374151; /* Dark gray cell background */
+        }
+
+        th {
+            width: 40%;
+            font-weight: bold;
+        }
+
+        /* Green download button */
+        .btn-download {
+            display: block;
+            width: 100%;
+            background-color: #22c55e;
+            color: white;
+            font-weight: bold;
+            margin-top: 15px;
+            border: none;
+            padding: 10px;
+            border-radius: 6px;
+        }
+
+        .btn-download:hover {
+            background-color: #16a34a;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Top navigation buttons -->
+    <div class="top-buttons">
+        <a href="index.html" class="btn btn-outline-light btn-sm">🏠 Home</a>
+        <a href="plans.html" class="btn btn-outline-light btn-sm">📦 View Plans</a>
+    </div>
+
+    <div class="receipt-container">
+        <h2>✅ Payment Successful</h2>
+        <p class="text-muted">Thank you for your payment. Below are your transaction details:</p>
+
+        <table>
+            <tbody>
+                <tr>
+                    <th>Plan Name</th>
+                    <td id="receipt-plan-name"></td>
+                </tr>
+                <tr>
+                    <th>Plan Price (USDT)</th>
+                    <td id="receipt-plan-price"></td>
+                </tr>
+                <tr>
+                    <th>Wallet Address (Receiver)</th>
+                    <td id="receipt-wallet-address"></td>
+                </tr>
+                <tr>
+                    <th>Network (Receiver)</th>
+                    <td id="receipt-network"></td>
+                </tr>
+                <tr>
+                    <th>Transaction Hash</th>
+                    <td id="receipt-hash"></td>
+                </tr>
+                <tr>
+                    <th>Email</th>
+                    <td id="receipt-email"></td>
+                </tr>
+                <tr>
+                    <th>Date</th>
+                    <td id="receipt-date"></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <button class="btn-download" id="download-pdf">📄 Download as PDF</button>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const planName = localStorage.getItem("selectedPlanName") || "N/A";
+            const planPrice = localStorage.getItem("selectedPlanPrice") || "N/A";
+            const walletAddress = localStorage.getItem("walletAddress_user") || "N/A";
+            const network = localStorage.getItem("userNetwork") || "N/A";
+            const hash = localStorage.getItem("paymentTxnHash") || "N/A";
+            const email = localStorage.getItem("paymentEmail") || "N/A";
+            const date = new Date().toLocaleString();
+
+            document.getElementById("receipt-plan-name").textContent = planName;
+            document.getElementById("receipt-plan-price").textContent = planPrice;
+            document.getElementById("receipt-wallet-address").textContent = walletAddress;
+            document.getElementById("receipt-network").textContent = network;
+            document.getElementById("receipt-hash").textContent = hash;
+            document.getElementById("receipt-email").textContent = email;
+            document.getElementById("receipt-date").textContent = date;
+
+            localStorage.setItem("paymentDate", date);
+
+            document.getElementById("download-pdf").addEventListener("click", () => {
+                const { jsPDF } = window.jspdf;
+                const element = document.querySelector(".receipt-container");
+
+                document.querySelector(".top-buttons").style.display = "none";
+                document.getElementById("download-pdf").style.display = "none";
+
+                html2canvas(element, { scale: 2, backgroundColor: "#0f172a" }).then(canvas => {
+                    const imgData = canvas.toDataURL("image/png");
+                    const pdf = new jsPDF("p", "mm", "a4");
+                    const pdfWidth = pdf.internal.pageSize.getWidth();
+                    const pdfHeight = (canvas.height * pdfWidth) / canvas.width;
+                    pdf.addImage(imgData, "PNG", 0, 0, pdfWidth, pdfHeight);
+                    pdf.save(`Payment_Receipt_${Date.now()}.pdf`);
+
+                    document.querySelector(".top-buttons").style.display = "flex";
+                    document.getElementById("download-pdf").style.display = "block";
+                });
+            });
+        });
+    </script>
+
+</body>
+</html>

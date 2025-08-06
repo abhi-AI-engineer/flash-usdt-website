@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Gateway - Flash USDT</title>
+    <link href="./assets/images/homeimage/final-logo.png" rel="icon">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="assets/bootstrap-5.3.7-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/payment.css">
+</head>
+
+<body>
+
+    <!-- Preloader -->
+    <div id="preloader">
+        <img src="assets/images/homeimage/preloaderimg.png" alt="Loading...">
+    </div>
+
+    <!-- Header -->
+    <div id="header-placeholder"></div>
+
+    <!-- Main Content -->
+    <main class="container">
+        <div class="payment-gateway-container">
+            <div class="payment-card">
+
+                <!-- QR Codes -->
+                <img id="qr-TRC20" src="assets/images/qr-codes/TRC20.jpeg" alt="QR Code-TRC20" class="qr-code"
+                    style="display:none;">
+                <img id="qr-ERC20" src="assets/images/qr-codes/ERC20.jpeg" alt="QR Code-ERC20" class="qr-code"
+                    style="display:none;">
+                <img id="qr-BEP20" src="assets/images/qr-codes/BEP20.jpeg" alt="QR Code-BEP20" class="qr-code"
+                    style="display:none;">
+
+                <h3 class="text-center">Payment Gateway - USDT</h3>
+                <p class="text-center text-warning">
+                    Please send <span id="plan-amount"></span> USDT for <span id="plan-name"></span> to the wallet
+                    address below:
+                </p>
+
+                <!-- Network selection -->
+                <div id="network-selector" class="d-flex justify-content-center my-3">
+                    <button class="btn btn-network" data-network="TRC20">TRC20</button>
+                    <button class="btn btn-network" data-network="ERC20">ERC20</button>
+                    <button class="btn btn-network" data-network="BEP20">BEP20</button>
+                </div>
+
+                <!-- Wallet address -->
+                <div class="wallet-address-box">
+                    <h6 style="color: #ffc107;">Wallet Address</h6>
+                    <span id="wallet-address" style="color: green; font-weight: bold;"></span>
+                    <button id="copy-button" class="btn btn-primary w-100 mt-2">Copy Wallet Address</button>
+                </div>
+
+                <p class="mt-4">After payment, enter your E-mail address to confirm:</p>
+
+                <!-- Payment form -->
+                <form id="payment-form">
+                    <div class="mb-3">
+                        <input type="email" class="form-control" placeholder="Enter your Email address" id="email"
+                            required>
+                    </div>
+                    <div class="mb-3">
+                        <input type="text" class="form-control" placeholder="Enter Transaction Hash" id="hash" required>
+                    </div>
+                    <button type="submit" class="btn btn-success w-100">Complete Payment</button>
+                </form>
+
+                <!-- Timer -->
+                <div class="timer-wrapper mt-3">
+                    <div id="timer" class="timer">20:00</div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <div id="footer-placeholder"></div>
+
+    <!-- JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/main.js"></script>
+
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            // Plan price from localStorage
+            const storedPrice = localStorage.getItem("selectedPlanPrice") || "$99";
+            document.getElementById("plan-amount").textContent = storedPrice;
+
+            // Wallet addresses for each network
+            const walletAddresses = {
+                "TRC20": "TXYZ1234567890TRC20WALLETADDRESS",
+                "ERC20": "0xABCDEF1234567890ERC20WALLETADDRESS",
+                "BEP20": "0x1234567890ABCDEFBEp20WALLETADDRESS"
+            };
+
+            let selectedNetwork = localStorage.getItem("qrPaymentNetwork") || "TRC20";
+            const walletAddressSpan = document.getElementById('wallet-address');
+
+            // Function to display network QR + wallet
+            function showNetwork(network) {
+                // Hide all QR codes
+                document.querySelectorAll('.qr-code').forEach(el => el.style.display = "none");
+
+                // Show selected QR
+                document.getElementById(`qr-${network}`).style.display = "block";
+
+                // Show wallet address
+                walletAddressSpan.innerText = walletAddresses[network];
+
+                // Save to localStorage for later use (email + receipt)
+                localStorage.setItem("qrPaymentNetwork", network);
+                localStorage.setItem("qrPaymentWallet", walletAddresses[network]);
+
+                // Highlight selected button
+                document.querySelectorAll('.btn-network').forEach(btn => {
+                    btn.classList.toggle('active', btn.dataset.network === network);
+                });
+            }
+
+            // Show default or saved network
+            showNetwork(selectedNetwork);
+
+            // Button click events
+            document.querySelectorAll('.btn-network').forEach(btn => {
+                btn.addEventListener('click', function () {
+                    const network = this.dataset.network;
+                    showNetwork(network);
+                });
+            });
+
+            // Copy wallet address
+            document.getElementById('copy-button').addEventListener('click', function () {
+                navigator.clipboard.writeText(walletAddressSpan.innerText).then(() => {
+                    const copyBtn = document.getElementById('copy-button');
+                    copyBtn.innerText = 'Copied!';
+                    setTimeout(() => copyBtn.innerText = 'Copy Wallet Address', 2000);
+                });
+            });
+
+            // Submit Payment
+            document.getElementById('payment-form').addEventListener('submit', async function (e) {
+                e.preventDefault();
+
+                const email = document.getElementById('email').value;
+                const hash = document.getElementById('hash').value;
+
+                // Values saved in payment-step.html
+                const walletAddress_user = localStorage.getItem("walletAddress_user");
+                const userNetwork = localStorage.getItem("userNetwork");
+
+                // Values saved in plans.html
+                const planName = localStorage.getItem("selectedPlanName");
+                const planPrice = localStorage.getItem("selectedPlanPrice");
+
+                const date = new Date().toLocaleString();
+
+                // Store in localStorage for receipt
+                localStorage.setItem("paymentEmail", email);
+                localStorage.setItem("paymentTxnHash", hash);
+                localStorage.setItem("paymentDate", date);
+
+                const payload = {
+                    planName,
+                    planPrice,
+                    walletAddress: walletAddress_user,  // <-- user's wallet from step 1
+                    network: userNetwork,               // <-- user's network from step 1
+                    hash,
+                    email,
+                    date
+                };
+
+                const submitBtn = this.querySelector('button[type="submit"]');
+                submitBtn.innerHTML = `<span class="spinner-border spinner-border-sm"></span> Processing...`;
+                submitBtn.disabled = true;
+
+                try {
+                    const res = await fetch('/payment-submit', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify(payload)
+                    });
+
+                    const result = await res.json();
+                    if (res.ok) {
+                        submitBtn.innerHTML = `✅ Payment Successful`;
+                        setTimeout(() => window.location.href = "payment-success.html", 1500);
+                    } else {
+                        alert('❌ Error: ' + result.message);
+                        submitBtn.innerHTML = `Complete Payment`;
+                        submitBtn.disabled = false;
+                    }
+                } catch (error) {
+                    alert('❌ Server Error!');
+                    submitBtn.innerHTML = `Complete Payment`;
+                    submitBtn.disabled = false;
+                }
+            });
+        });
+    </script>
+
+</body>
+
+</html>

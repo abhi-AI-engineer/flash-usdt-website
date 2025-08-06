@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="hi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wallet Confirmation Page</title>
+    <link href="./assets/images/homeimage/final-logo.png" rel="icon">
+    
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/payment-step.css">
+</head>
+
+<body>
+    <div class="payment-step-container">
+        <h2>Confirm Your Wallet</h2>
+        <form id="walletForm" class="wallet-info">
+            <div class="form-group">
+                <label for="walletAddress_user">1. Please enter your wallet address</label>
+                <input type="text" id="walletAddress_user" placeholder="Enter your wallet address" required>
+            </div>
+            <div class="form-group">
+                <label for="network">2. Select your network</label>
+                <select id="network">
+                    <option value="TRC20">TRC20</option>
+                    <option value="ERC20">ERC20</option>
+                    <option value="BEP20">BEP20</option>
+                </select>
+            </div>
+            <a href="payment.html" class="cmn--btn" onclick="Proceed(event)">Next (Proceed to Payment)</a>
+        </form>
+    </div>
+
+    <!-- payment-step.html -->
+    <script>
+        function Proceed(event) {
+            const walletAddress_user = document.getElementById('walletAddress_user').value.trim();
+            const network = document.getElementById('network').value;
+
+            if (!walletAddress_user) {
+                alert("⚠️ Please enter your wallet address before proceeding.");
+                event.preventDefault();
+                return;
+            }
+
+            // Save in localStorage for payment.html
+            localStorage.setItem("walletAddress_user", walletAddress_user);
+            localStorage.setItem("userNetwork", network);
+        }
+    </script>
+
+</body>
+
+</html>

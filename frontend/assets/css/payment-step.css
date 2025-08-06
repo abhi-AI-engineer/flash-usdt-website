@@ -50,7 +50,7 @@ h2 {
 }
 
 /* Input and Select Fields Styles */
-#walletAddress, #network {
+#walletAddress_user, #walletAddress_user, #network {
     width: 100%;
     background-color: transparent;
     border: 1px solid #3d4a5a; /* बॉर्डर का रंग */
@@ -63,12 +63,12 @@ h2 {
 }
 
 /* Placeholder Text Style */
-#walletAddress::placeholder {
+#walletAddress_user::placeholder {
     color: #6c757d;
 }
 
 /* Focus effect for input/select */
-#walletAddress:focus, #network:focus {
+#walletAddress_user:focus, #network:focus {
     outline: none;
     border-color: #8f94fb; /* फोकस पर बॉर्डर का रंग */
     box-shadow: 0 0 0 3px rgba(143, 148, 251, 0.2);

@@ -54,6 +54,11 @@
     border: 1px solid #334155;
 }
 
+.wallet-address-box h6{
+    color: #ffc107;
+    font-family:'Courier New', Courier, monospace;
+}
+
 .payment-card .form-control {
     background-color: #334155;
     border: 1px solid #475569;
@@ -96,10 +101,10 @@
 #timer {
     background-color: #2a3150;
     color: #ffc107;
-    font-size: 1.8rem;
+    font-size: 1.5rem;
     font-weight: 600;
     text-align: center;
-    padding: 10px 30px;
+    padding: 5px 10px;
     border-radius: 50px;
     border: 1px solid #444;
 }
