@@ -205,6 +205,32 @@
         });
     </script>
 
+   <!-- tmer is working script start -->
+    <script>
+        // Countdown Timer (20 minutes)
+        let timerDisplay = document.getElementById("timer");
+        let duration = 20 * 60; // 20 minutes in seconds
+
+        let countdown = setInterval(() => {
+            let minutes = Math.floor(duration / 60);
+            let seconds = duration % 60;
+
+            // Format to MM:SS
+            timerDisplay.textContent = `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+
+            duration--;
+
+            if (duration < 0) {
+                clearInterval(countdown);
+                timerDisplay.textContent = "⏰ Time Expired";
+                timerDisplay.style.color = "red";
+                document.getElementById('payment-form').querySelector('button[type="submit"]').disabled = true;
+            }
+        }, 1000);
+    </script>
+   <!-- tmer is working script end -->
+
+
 </body>
 
 </html>

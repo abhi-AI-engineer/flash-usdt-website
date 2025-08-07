@@ -82,8 +82,8 @@ body {
     visibility: hidden;
 }
 #preloader img {
-    width: 250px; 
-    height: 10%;
+    width: 80px; 
+    height: 5%;
     animation: spin 2s linear infinite;
 }
 
@@ -625,11 +625,11 @@ color: #cbd5e1!important;
 }
 .timer {
     position: absolute;
-    bottom: -22px;
+    bottom: 5px;
     background-color: rgba(0,0,0,0.3);
     padding: 5px 10px;
     border-radius: 5px;
-    font-size: 0.9rem;
+    font-size: 0.7rem;
 }
 
 
