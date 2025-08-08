@@ -4,7 +4,7 @@ const blogPosts = [
     {
         id: 1,
         title: "Is Bitcoin in a Dangerous Bubble?",
-        image: "assets/images/blog/blog1.jpg", // Yahan apni image ka path daalein
+        image: "assets/images/blog/blogg1.jpg", // Yahan apni image ka path daalein
         date: "20 Aug",
         excerpt: "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.",
         content: `
