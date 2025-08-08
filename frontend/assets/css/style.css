@@ -64,7 +64,7 @@ body {
     }
 }
 /* ========== PRELOADER STYLES ========== */
-#preloader {
+/* #preloader {
     position: fixed; 
     top: 0;
     left: 0;
@@ -82,9 +82,48 @@ body {
     visibility: hidden;
 }
 #preloader img {
-    width: 80px; 
-    height: 5%;
+    width: 100px; 
+    height: 10%;
     animation: spin 2s linear infinite;
+} */
+
+
+#preloader {
+    position: fixed; 
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+    background-color: #0F172A; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.preloader-hidden {
+    transition: opacity 0.90s ease-out, visibility 0.90s ease-out;
+    opacity: 0;
+    visibility: hidden;
+}
+
+#preloader img {
+    width: 100px; 
+    height: auto;
+    animation: flipY 2s linear infinite;
+}
+
+/* Flip animation on Y-axis */
+@keyframes flipY {
+    0% {
+        transform: rotateX(0deg);
+    }
+    50% {
+        transform: rotateX(180deg);
+    }
+    100% {
+        transform: rotateX(360deg);
+    }
 }
 
 /* Header and Navbar */
@@ -333,7 +372,7 @@ section {
 }
 .plans-section .plan-card .total-return {
     font-size: 0.95rem;
-    margin-top: auto; 
+    margin-top: 0.5px; 
     margin-bottom: 15px;
 }
 .plans-section .plan-card .btn-warning {
@@ -346,7 +385,7 @@ section {
 
 
 .plans-section .plan-card {
-    max-width: 250px; 
+    max-width: 280px; 
     margin-left: auto;
     margin-right: auto;
     padding: 15px 12px; 
