@@ -1,5 +1,3 @@
-<!-- Placeholder content for index.html -->
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -13,38 +11,38 @@
   <meta name="keywords" content="Flash USD, USD transactions, blockchain payments, secure transfers, instant USD payments">
   <meta name="author" content="Flash USD">
 
+  <!-- Favicon -->
+  <link rel="icon" type="image/x-icon" href="assets/images/homeimage/favicon.png">
+  
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://flash-usd.online/">
   <meta property="og:title" content="Flash USD – Fast & Secure USD Transactions">
-  <meta property="og:description" content="Lightning-fast and secure USD transactions powered by blockchain technology.">
-  <meta property="og:image" content="https://flash-usd.online/images/og-image.jpg">
+  <meta property="og:description" content="Lightning-fast and secure USD transactions powered by blockchain technology. Experience seamless payments with trust and transparency.">
+  <meta property="og:image" content="https://flash-usd.online/assets/images/og-image.jpg">
 
   <!-- Twitter -->
-  <meta property="twitter:card" content="summary_large_image">
-  <meta property="twitter:url" content="https://flash-usd.online/">
-  <meta property="twitter:title" content="Flash USD – Fast & Secure USD Transactions">
-  <meta property="twitter:description" content="Lightning-fast and secure USD transactions powered by blockchain technology.">
-  <meta property="twitter:image" content="https://flash-usd.online/images/og-image.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:url" content="https://flash-usd.online/">
+  <meta name="twitter:title" content="Flash USD – Fast & Secure USD Transactions">
+  <meta name="twitter:description" content="Lightning-fast and secure USD transactions powered by blockchain technology. Experience seamless payments with trust and transparency.">
+  <meta name="twitter:image" content="https://flash-usd.online/assets/images/og-image.jpg">
 
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://flash-usd.online/">
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="assets/bootstrap-5.3.7-dist/css/bootstrap.min.css">
+  <!-- CSS Files - Remove duplicates and fix order -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/activate-miner.css">
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-
-
-    <link rel="stylesheet" href="assets/css/style.css">
-    <link rel="stylesheet" href="assets/css/activate-miner.css">
-    <script src="assets/js/blog-data.js"></script>
-    <script src="assets/js/home-blogs.js"></script>
+  <!-- Preload important resources -->
+  <link rel="preload" href="assets/css/style.css" as="style">
+  <link rel="preload" href="assets/js/main.js" as="script">
 </head>
 
-
 <body>
-
     <div id="preloader">
         <img src="assets/images/homeimage/preloaderimg.png" alt="Loading...">
     </div>
@@ -54,12 +52,12 @@
         <section class="hero-section text-center">
             <h1>Buy Flash USDT At The Lowest Price</h1>
             <p class="text-muted fs-5">Enjoy instant and seamless trading, turning every transaction into profit!</p>
-            <a href="payment-step.html" class="btn btn-lg btn-warning mt-3">Buy ! Flash USDT </a>
+            <a href="payment-step.html" class="btn btn-lg btn-warning mt-3">Buy Flash USDT</a>
         </section>
 
         <!-- Earn Section -->
         <section class="earn-section text-center how">
-            <h2 style="color: rgb(204, 150, 0);">How Much I Will Earn?</h2>
+            <h2 style="color: rgb(204, 150, 0);">How Much Will I Earn?</h2>
             <div class="earn-calculator mx-auto mt-4">
                 <div class="mb-3">
                     <label for="coinSelect" class="form-label">Select Coin</label>
@@ -70,22 +68,18 @@
                 <div class="mb-3">
                     <label for="planSelect" class="form-label">Select Plan</label>
                     <select class="form-select" id="planSelect">
-
-                        <option value="Advanced plan" disabled="">Select Plan</option>
-                        <option value="30000 FLASH USDT"> Starter Plan </option>
-                        <option value="200000 FLASH USDT"> Advanced Plan </option>
-                        <option value="1800000 FLASH USDT"> Premium Plan </option>
-                        <option value="4000000 FLASH USDT"> Executive Plan </option>
+                        <option value="" disabled selected>Select Plan</option>
+                        <option value="30000 FLASH USDT">Starter Plan</option>
+                        <option value="200000 FLASH USDT">Advanced Plan</option>
+                        <option value="1800000 FLASH USDT">Premium Plan</option>
+                        <option value="4000000 FLASH USDT">Executive Plan</option>
                     </select>
                 </div>
                 <div class="result display-6">
-                    30000 FLASH USDT
+                    Select a plan to see earnings
                 </div>
             </div>
         </section>
-
-
-
 
         <section class="how-work py-120">
             <div class="container">
@@ -93,8 +87,7 @@
                     <div class="col-lg-10">
                         <div class="section-heading">
                             <h2 class="section-heading__title">How flashusd.online Website Works?</h2>
-                            <p class="section-heading__desc">Get started in just four simple steps to enjoy Flash USDT
-                                every day!</p>
+                            <p class="section-heading__desc">Get started in just four simple steps to enjoy Flash USDT every day!</p>
                         </div>
                     </div>
                 </div>
@@ -107,9 +100,7 @@
                             </div>
                             <div class="how-work-item__content">
                                 <h5 class="how-work-item__title">Create An Account</h5>
-                                <p class="how-work-item__desc">Sign up for your flashusd.online Website account to
-                                    quickly
-                                    and easily begin your Flash USDT earning journey.</p>
+                                <p class="how-work-item__desc">Sign up for your flashusd.online Website account to quickly and easily begin your Flash USDT earning journey.</p>
                             </div>
                         </div>
                     </div>
@@ -121,8 +112,7 @@
                             </div>
                             <div class="how-work-item__content">
                                 <h5 class="how-work-item__title">Choose Plans</h5>
-                                <p class="how-work-item__desc">Pick a Flash USDT earning plan from a variety of options
-                                    designed specifically to match your goals.</p>
+                                <p class="how-work-item__desc">Pick a Flash USDT earning plan from a variety of options designed specifically to match your goals.</p>
                             </div>
                         </div>
                     </div>
@@ -134,8 +124,7 @@
                             </div>
                             <div class="how-work-item__content">
                                 <h5 class="how-work-item__title">Start Mining</h5>
-                                <p class="how-work-item__desc">We mine Flash USDT daily on your behalf, and you'll
-                                    receive your earnings every day as per your chosen plan.</p>
+                                <p class="how-work-item__desc">We mine Flash USDT daily on your behalf, and you'll receive your earnings every day as per your chosen plan.</p>
                             </div>
                         </div>
                     </div>
@@ -147,8 +136,7 @@
                             </div>
                             <div class="how-work-item__content">
                                 <h5 class="how-work-item__title">Withdraw</h5>
-                                <p class="how-work-item__desc">Conveniently withdraw or use your accumulated Flash USDT
-                                    at any time, whenever it suits your needs.</p>
+                                <p class="how-work-item__desc">Conveniently withdraw or use your accumulated Flash USDT at any time, whenever it suits your needs.</p>
                             </div>
                         </div>
                     </div>
@@ -164,72 +152,67 @@
                     <div class="plan-card">
                         <div class="plan-icon">T</div>
                         <h5>Starter Plan</h5>
-                        <p class="plan-price">$99.00 <span class="text-muted fs-6"></span></p>
+                        <p class="plan-price">$99.00</p>
                         <ul class="list-unstyled text-start p-2">
-                            <li><i class="fas fa-check-circle text-success me-2"></i>Get 3,000.00 FLASH USDT </li>
+                            <li><i class="fas fa-check-circle text-success me-2"></i>Get 3,000.00 FLASH USDT</li>
                             <li><i class="fas fa-check-circle text-success me-2"></i>0% Maintenance cost per day</li>
-                            <li><i class="fas fa-check-circle text-success me-2"></i>Tradeable all wallet with exchanges
-                            </li>
+                            <li><i class="fas fa-check-circle text-success me-2"></i>Tradeable all wallet with exchanges</li>
                             <li><i class="fas fa-check-circle text-success me-2"></i>P2P Sellable</li>
-                            <li><i class="fas fa-check-circle text-success me-2"></i>validity- for 180 Days</li>
+                            <li><i class="fas fa-check-circle text-success me-2"></i>validity - for 180 Days</li>
                         </ul>
                         <p class="total-return">Get 3,000.00 FLASH USDT in 180 Days</p>
-                        <a href="plans.html" class="btn btn-warning w-100"> Select Plan</a>
+                        <a href="plans.html" class="btn btn-warning w-100">Select Plan</a>
                     </div>
                 </div>
                 <div class="col-md-3 col-lg-3 mb-3">
                     <div class="plan-card">
                         <div class="plan-icon">T</div>
                         <h5>Advanced Plan</h5>
-                        <p class="plan-price">$299.00 <span class="text-muted fs-6"></span></p>
+                        <p class="plan-price">$299.00</p>
                         <ul class="list-unstyled text-start p-2">
                             <li><i class="fas fa-check-circle text-success me-2"></i>Get 10,000.00 FLASH USDT</li>
                             <li><i class="fas fa-check-circle text-success me-2"></i>0% Maintenance cost per day</li>
-                            <li><i class="fas fa-check-circle text-success me-2"></i>Tradeable all wallet with exchanges
-                            </li>
+                            <li><i class="fas fa-check-circle text-success me-2"></i>Tradeable all wallet with exchanges</li>
                             <li><i class="fas fa-check-circle text-success me-2"></i>P2P Sellable</li>
-                            <li><i class="fas fa-check-circle text-success me-2"></i>validity- for 180 Days</li>
+                            <li><i class="fas fa-check-circle text-success me-2"></i>validity - for 180 Days</li>
                         </ul>
                         <p class="total-return">Get 10,000.00 FLASH USDT in 180 Days</p>
-                        <a href="plans.html" class="btn btn-warning w-100"> Select Plan</a>
+                        <a href="plans.html" class="btn btn-warning w-100">Select Plan</a>
                     </div>
                 </div>
                 <div class="col-md-3 col-lg-3 mb-3">
                     <div class="plan-card">
                         <div class="plan-icon">T</div>
                         <h5>Premium Plan</h5>
-                        <p class="plan-price">$499.00 <span class="text-muted fs-6"></span></p>
+                        <p class="plan-price">$499.00</p>
                         <ul class="list-unstyled text-start p-2">
-                            <li><i class="fas fa-check-circle text-success me-2"></i>Get 20,000.00 FLASH USDT </li>
+                            <li><i class="fas fa-check-circle text-success me-2"></i>Get 20,000.00 FLASH USDT</li>
                             <li><i class="fas fa-check-circle text-success me-2"></i>0% Maintenance cost per day</li>
-                            <li><i class="fas fa-check-circle text-success me-2"></i>Tradeable all wallet with exchanges
-                            </li>
+                            <li><i class="fas fa-check-circle text-success me-2"></i>Tradeable all wallet with exchanges</li>
                             <li><i class="fas fa-check-circle text-success me-2"></i>P2P Sellable</li>
-                            <li><i class="fas fa-check-circle text-success me-2"></i>validity- for 180 Days</li>
+                            <li><i class="fas fa-check-circle text-success me-2"></i>validity - for 180 Days</li>
                         </ul>
                         <p class="total-return">Get 20,000.00 FLASH USDT in 180 Days</p>
-                        <a href="plans.html" class="btn btn-warning w-100"> Select Plan</a>
+                        <a href="plans.html" class="btn btn-warning w-100">Select Plan</a>
                     </div>
                 </div>
                 <div class="col-md-3 col-lg-3 mb-3">
                     <div class="plan-card">
                         <div class="plan-icon">T</div>
                         <h5>Executive Plan</h5>
-                        <p class="plan-price">$2999.00 <span class="text-muted fs-6"></span></p>
+                        <p class="plan-price">$2999.00</p>
                         <ul class="list-unstyled text-start p-2">
-                            <li><i class="fas fa-check-circle text-success me-2"></i>Get 300,000.00 FLASH USDT </li>
+                            <li><i class="fas fa-check-circle text-success me-2"></i>Get 300,000.00 FLASH USDT</li>
                             <li><i class="fas fa-check-circle text-success me-2"></i>0% Maintenance cost per day</li>
-                            <li><i class="fas fa-check-circle text-success me-2"></i>Tradeable all wallet with exchanges
-                            </li>
+                            <li><i class="fas fa-check-circle text-success me-2"></i>Tradeable all wallet with exchanges</li>
                             <li><i class="fas fa-check-circle text-success me-2"></i>P2P Sellable</li>
-                            <li><i class="fas fa-check-circle text-success me-2"></i>validity- for 180 Days</li>
+                            <li><i class="fas fa-check-circle text-success me-2"></i>validity - for 180 Days</li>
                         </ul>
                         <p class="total-return">Get 300,000.00 FLASH USDT in 180 Days</p>
-                        <a href="plans.html" class="btn btn-warning w-100"> Select Plan</a>
+                        <a href="plans.html" class="btn btn-warning w-100">Select Plan</a>
                     </div>
                 </div>
             </div>
-
             <a href="plans.html" class="btn btn-outline-light mt-3">View All Plans</a>
         </section>
 
@@ -237,76 +220,58 @@
         <section class="testimonial-section text-center">
             <h2>What people says about us</h2>
             <p class="text-muted">A huge number of people trust us and here are the words of some of them.</p>
-
             <div class="row">
                 <div class="col-sm-4">
                     <div class="testimonial-card mx-auto mt-4">
-                        <img src="assets/images/testamonial/testamimg1.png" alt="User Avatar">
+                        <img src="assets/images/testamonial/testamimg1.png" alt="Mr. Marjorie Avatar">
                         <h5>Mr. Marjorie</h5>
                         <p class="text-muted">Influencer</p>
-                        <blockquote class="fs-5">“I received my withdrawal from this company in less than 4 hours. A
-                            really good start. Now I can refer it to people.”</blockquote>
+                        <blockquote class="fs-5">"I received my withdrawal from this company in less than 4 hours. A really good start. Now I can refer it to people."</blockquote>
                     </div>
-
-
                 </div>
                 <div class="col-sm-4">
                     <div class="testimonial-card mx-auto mt-4">
-                        <img src="assets/images/testamonial/testamimg2.png" alt="User Avatar">
-                        <h5> Mr. Rajeev</h5>
+                        <img src="assets/images/testamonial/testamimg2.png" alt="Mr. Rajeev Avatar">
+                        <h5>Mr. Rajeev</h5>
                         <p class="text-muted">Investor</p>
-                        <blockquote class="fs-5">“Excellent platform for secure transactions. The support team is also
-                            very helpful and quick to respond. Highly recommended.”</blockquote>
+                        <blockquote class="fs-5">"Excellent platform for secure transactions. The support team is also very helpful and quick to respond. Highly recommended."</blockquote>
                     </div>
-
                 </div>
                 <div class="col-sm-4">
                     <div class="testimonial-card mx-auto mt-4">
-                        <img src="assets/images/testamonial/testamimg3.png" alt="User Avatar">
+                        <img src="assets/images/testamonial/testamimg3.png" alt="Mr. Kamal Avatar">
                         <h5>Mr. Kamal</h5>
                         <p class="text-muted">Entrepreneur</p>
-                        <blockquote class="fs-5">“The process was smooth and transparent. I got my payment without any
-                            delays. I’m very satisfied with the service!”</blockquote>
+                        <blockquote class="fs-5">"The process was smooth and transparent. I got my payment without any delays. I'm very satisfied with the service!"</blockquote>
                     </div>
-
                 </div>
             </div>
-
-
-
-
-
-
         </section>
 
-
-
-        <!-- ===== LATEST BLOGS SECTION (ON HOMEPAGE) ===== -->
+        <!-- Latest Blogs Section -->
         <section class="latest-blogs-section py-5">
             <div class="container">
                 <div class="row justify-content-center">
                     <div class="col-lg-8 text-center">
                         <h2 class="section-title">From Our Blog</h2>
-                        <p class="section-subtitle">Stay updated with the latest news and insights from the crypto
-                            world.</p>
+                        <p class="section-subtitle">Stay updated with the latest news and insights from the crypto world.</p>
                     </div>
                 </div>
-
-
-                <div class="row gy-4 mt-4" id="home-blog-posts-container">
-
-                </div>
+                <div class="row gy-4 mt-4" id="home-blog-posts-container"></div>
             </div>
         </section>
-
-
     </main>
-    <!-- FOOTER START -->
-    <div id="footer"></div>
-    <!-- FOOTER END -->
 
+    <!-- Footer -->
+    <div id="footer"></div>
+
+    <!-- JavaScript Files -->
+    <script src="assets/js/blog-data.js"></script>
+    <script src="assets/js/home-blogs.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="assets/js/main.js"></script>
+    
+    <!-- Google Translate -->
     <script type="text/javascript">
         function googleTranslateElementInit() {
             new google.translate.TranslateElement(
@@ -318,10 +283,7 @@
             );
         }
     </script>
-    <script type="text/javascript"
-        src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-
-
+    <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 </body>
 
 </html>

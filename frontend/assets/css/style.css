@@ -102,12 +102,12 @@ body {
 }
 
 .preloader-hidden {
-    transition: opacity 0.90s ease-out, visibility 0.90s ease-out;
+    transition: opacity 0.90s ease-out, visibility 0.10s ease-out;
     opacity: 0;
     visibility: hidden;
 }
 #preloader img {
-    width: 100px; 
+    width: 70px; 
     height: auto;
     animation: flipY 2s linear infinite;
 }
@@ -180,11 +180,11 @@ body {
 
 /* Main Content Sections */
 main.container {
-    padding-top: 40px;
+    padding-top: 20px;
     padding-bottom: 40px;
 }
 section {
-    padding: 60px 0;
+    padding: 40px 0;
 }
 .section-title {
     margin-bottom: 40px;
@@ -200,20 +200,19 @@ section {
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;   
-    min-height: 70vh; 
-    margin-top: 10px;
-    margin-bottom: 10px;
+    min-height: 100%; 
     display: flex;
+    /* margin-top: 5%; */
+    padding-bottom: 15%;
+    padding-top: 10%;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
 @media (max-width: 1000px) {
     .hero-section {
-        justify-content: space-between;
-        min-height: 50vh; 
-        padding:0px 0px 0px 0px;
-   
+        justify-content: space-between;   
+        gap: 25px;
     }
     .btn-warning {
         margin-bottom: 30px;
