@@ -106,7 +106,6 @@ body {
     opacity: 0;
     visibility: hidden;
 }
-
 #preloader img {
     width: 100px; 
     height: auto;
@@ -165,7 +164,10 @@ body {
     background: linear-gradient(to right, #f59e0b, #fbbf24);
     border: none;
     color: #1e293b;
-    font-weight: 500;
+    font-weight: bold;
+    font-size: 15px;
+    /* padding: 15px; */
+    /* border-radius: 10px; */
 }
 .btn-outline-warning {
     border-color: #f59e0b;
@@ -205,6 +207,17 @@ section {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+@media (max-width: 1000px) {
+    .hero-section {
+        justify-content: space-between;
+        min-height: 50vh; 
+        padding:0px 0px 0px 0px;
+   
+    }
+    .btn-warning {
+        margin-bottom: 30px;
+}
 }
 
 .hero-section h1, .hero-section .text-muted {
