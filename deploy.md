@@ -17,6 +17,14 @@ cd flash-usdt-website/backend
 ```bash
 npm install
 ```
+### Make .env Example config:
+```
+GMAIL_USER=user_email@gmail.com
+GMAIL_PASS=app_password
+ADMIN_EMAIL=admin_email@gmail.com
+PORT=3000
+
+```
 
 ## 4. Test Locally
 ```bash
