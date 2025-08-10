@@ -17,7 +17,11 @@ cd flash-usdt-website/backend
 ```bash
 npm install
 ```
-### Make .env Example config:
+### Create in linux file :
+`nano .env`
+
+- Make .env Example config:
+
 ```
 GMAIL_USER=user_email@gmail.com
 GMAIL_PASS=app_password
