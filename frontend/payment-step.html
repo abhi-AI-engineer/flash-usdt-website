@@ -18,9 +18,22 @@
 <body>
     <div class="payment-step-container">
         <!-- ADDED: Selected Plan Summary -->
-        <div id="selectedPlanSummary" style="text-align: center; color: #ffc107; font-family: serif;  margin-bottom:30px; margin-top: -35px;">
-            <span style="color: green; font-size: 20px;">&#10004;</span>
-            <span id="planText" style="font-weight: bold; font-size: 20px;"></span>
+        <div id="selectedPlanSummary" style="text-align: center; color: #ffc107; font-family: serif; margin-top: -30px;">
+            <span style="color: green; font-size: 15px;">&#10004;</span>
+            <span id="planTitle" style="font-weight: bold; font-size: 18px;"></span><br>
+            <div id="planBenefit" style="
+        display: inline-block;
+        background: white;
+        color: green;
+        font-weight: bold;
+        padding: 4px 18px;
+        border-radius: 8px;
+        font-size: 16px;
+        font-style: italic;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        margin-bottom: 20px;
+        ">
+            </div>
         </div>
         <!-- ADDED END -->
 
@@ -43,32 +56,18 @@
     </div>
 
     <script>
-        // Show selected plan
         const planName = localStorage.getItem("selectedPlanName");
         const planPrice = localStorage.getItem("selectedPlanPrice");
+        const planBenefit = localStorage.getItem("selectedPlanBenefit");
 
-        if (planName && planPrice) {
-            document.getElementById("planText").textContent =
-                `${planName} - ${planPrice}`;
+        if (planName && planPrice && planBenefit) {
+            document.getElementById("planTitle").textContent = `${planName} - ${planPrice}`;
+            document.getElementById("planBenefit").textContent = planBenefit;
         } else {
             document.getElementById("selectedPlanSummary").style.display = "none";
         }
-
-        // Proceed function
-        function Proceed(event) {
-            const walletAddress_user = document.getElementById('walletAddress_user').value.trim();
-            const network = document.getElementById('network').value;
-
-            if (!walletAddress_user) {
-                alert("⚠️ Please enter your wallet address before proceeding.");
-                event.preventDefault();
-                return;
-            }
-
-            localStorage.setItem("walletAddress_user", walletAddress_user);
-            localStorage.setItem("userNetwork", network);
-        }
     </script>
+
 </body>
 
 

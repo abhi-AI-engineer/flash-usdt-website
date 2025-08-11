@@ -4,10 +4,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   
+
     <title>Mining Plans - Flash USDT</title>
     <link href="./assets/images/homeimage/final-logo.png" rel="icon">
-    
+
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/plans.css">
     <link rel="stylesheet" href="assets/bootstrap-5.3.7-dist/css/bootstrap.min.css">
@@ -126,20 +126,21 @@
     <!-- ===== GOOGLE TRANSLATE SCRIPT END ===== -->
 
 
-    <!-- plans dynamic changeing start -->
-    <!-- plans.html -->
+    <!-- plans and planBenefit dynamic changeing start -->
     <script>
         document.querySelectorAll('.buy-plan').forEach(button => {
             button.addEventListener('click', function () {
+                const planCard = this.closest('.plan-card');
                 const price = this.getAttribute('data-price');
-                const planName = this.closest('.plan-card').querySelector('h5').textContent;
+                const planName = planCard.querySelector('h5').textContent;
+                const planBenefit = planCard.querySelector('ul li').textContent;
 
                 localStorage.setItem("selectedPlanPrice", price);
                 localStorage.setItem("selectedPlanName", planName);
+                localStorage.setItem("selectedPlanBenefit", planBenefit);
             });
         });
     </script>
-
 
     <!-- plans dynamic changeing end -->
 
