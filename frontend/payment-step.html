@@ -56,6 +56,23 @@
     </div>
 
     <script>
+        function Proceed(event) {
+            const walletAddress_user = document.getElementById('walletAddress_user').value.trim();
+            const network = document.getElementById('network').value;
+
+            if (!walletAddress_user) {
+                alert("⚠️ Please enter your wallet address before proceeding.");
+                event.preventDefault();
+                return;
+            }
+
+            // Save in localStorage for payment.html
+            localStorage.setItem("walletAddress_user", walletAddress_user);
+            localStorage.setItem("userNetwork", network);
+        }
+
+
+
         const planName = localStorage.getItem("selectedPlanName");
         const planPrice = localStorage.getItem("selectedPlanPrice");
         const planBenefit = localStorage.getItem("selectedPlanBenefit");
