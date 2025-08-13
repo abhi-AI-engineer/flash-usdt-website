@@ -32,8 +32,9 @@ body {
 h2 {
     color: #ffffff;
     text-align: center;
-    margin-bottom: 20px;
+    /* margin: 20px; */
     font-weight: 600;
+    margin-top:5px;
 }
 
 /* Form Group Spacing */

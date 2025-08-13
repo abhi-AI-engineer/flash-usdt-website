@@ -99,12 +99,12 @@
 
 /* यह टाइमर की फाइनल स्टाइल है */
 #timer {
-    background-color: #2a3150;
+    background: none;
     color: #ffc107;
-    font-size: 0.7rem;
+    font-size: 0.9rem;
     font-weight: 600;
     text-align: center;
     padding: 5px 20px;
     border-radius: 50px;
-    border: 1px solid #444;
+    /* border: 1px solid #444; */
 }
