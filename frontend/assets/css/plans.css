@@ -1,19 +1,3 @@
-
-/* Main content area padding */
-main.container.plans {
-    padding-top: 80px;
-    padding-bottom: 80px;
-}
-
-/* ------ Section Title ------ */
-.plans-section .section-title {
-    font-size: 2.5rem; /* 40px */
-    font-weight: 700;
-    color: #ffffff;
-    margin-bottom: 50px;
-    text-align: center;
-}
-
 /* ------ Plan Card Styling ------ */
 
 /* The main card for each plan */
